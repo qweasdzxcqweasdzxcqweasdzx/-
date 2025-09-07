@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNONA REALTY - Агентство недвижимости</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="logo.png" alt="UNONA REALTY" class="logo">
+                <span class="brand-text">UNONA REALTY</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Найдите свой идеальный дом</h1>
+            <p>Мы поможем вам найти недвижимость вашей мечты</p>
+            <div class="search-form">
+                <select class="search-select">
+                    <option>Тип недвижимости</option>
+                    <option>Квартира</option>
+                    <option>Дом</option>
+                    <option>Коммерческая</option>
+                </select>
+                <select class="search-select">
+                    <option>Операция</option>
+                    <option>Покупка</option>
+                    <option>Аренда</option>
+                </select>
+                <input type="text" placeholder="Город или район" class="search-input">
+                <button class="search-btn">Найти</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="hero-house.jpg" alt="Дом">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Почему выбирают нас</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Большой выбор</h3>
+                    <p>Более 1000 объектов недвижимости в нашей базе</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Безопасность сделок</h3>
+                    <p>Полное юридическое сопровождение всех операций</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Экономия времени</h3>
+                    <p>Быстрый подбор объектов по вашим критериям</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Опытные агенты</h3>
+                    <p>Профессиональная команда с многолетним опытом</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Properties Section -->
+    <section class="popular-properties">
+        <div class="container">
+            <h2>Популярные предложения</h2>
+            <div class="properties-grid">
+                <div class="property-card">
+                    <img src="property1.jpg" alt="Квартира">
+                    <div class="property-info">
+                        <h3>3-комнатная квартира</h3>
+                        <p class="location">Центральный район</p>
+                        <p class="price">8 500 000 ₽</p>
+                        <div class="property-details">
+                            <span><i class="fas fa-bed"></i> 3</span>
+                            <span><i class="fas fa-bath"></i> 2</span>
+                            <span><i class="fas fa-vector-square"></i> 85 м²</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <img src="property2.jpg" alt="Дом">
+                    <div class="property-info">
+                        <h3>Загородный дом</h3>
+                        <p class="location">Пригород</p>
+                        <p class="price">15 000 000 ₽</p>
+                        <div class="property-details">
+                            <span><i class="fas fa-bed"></i> 5</span>
+                            <span><i class="fas fa-bath"></i> 3</span>
+                            <span><i class="fas fa-vector-square"></i> 200 м²</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <img src="property3.jpg" alt="Студия">
+                    <div class="property-info">
+                        <h3>Студия в новостройке</h3>
+                        <p class="location">Новый район</p>
+                        <p class="price">4 200 000 ₽</p>
+                        <div class="property-details">
+                            <span><i class="fas fa-bed"></i> 1</span>
+                            <span><i class="fas fa-bath"></i> 1</span>
+                            <span><i class="fas fa-vector-square"></i> 45 м²</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all">
+                <a href="catalog.html" class="btn-primary">Посмотреть все объекты</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>1500+</h3>
+                    <p>Объектов в базе</p>
+                </div>
+                <div class="stat-item">
+                    <h3>800+</h3>
+                    <p>Довольных клиентов</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15</h3>
+                    <p>Лет на рынке</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Сделок в месяц</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Готовы найти свой дом?</h2>
+            <p>Свяжитесь с нами сегодня для бесплатной консультации</p>
+            <div class="cta-buttons">
+                <a href="contacts.html" class="btn-primary">Связаться с нами</a>
+                <a href="catalog.html" class="btn-secondary">Посмотреть каталог</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>UNONA REALTY</h3>
+                    <p>Ваш надежный партнер в мире недвижимости. Мы поможем найти дом вашей мечты.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="#">Покупка недвижимости</a></li>
+                        <li><a href="#">Продажа недвижимости</a></li>
+                        <li><a href="#">Аренда квартир</a></li>
+                        <li><a href="#">Коммерческая недвижимость</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                        <p><i class="fas fa-envelope"></i> info@unonarealty.ru</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Примерная, 123</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Режим работы</h3>
+                    <div class="working-hours">
+                        <p>Пн-Пт: 9:00 - 20:00</p>
+                        <p>Сб: 10:00 - 18:00</p>
+                        <p>Вс: 10:00 - 16:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 UNONA REALTY. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

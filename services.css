@@ -1,0 +1,604 @@
+/* Services page styles */
+.services-header {
+    background: linear-gradient(135deg, rgba(255,140,0,0.9), rgba(255,165,0,0.9)), url('services-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.services-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.services-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.main-services {
+    padding: 5rem 0;
+    background: #f8f9fa;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #ff8c00, #ffa500);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ff8c00, #ffa500);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 2rem;
+}
+
+.service-card h3 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.service-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.service-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.service-features li {
+    padding: 0.5rem 0;
+    color: #555;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.service-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #ff8c00;
+    font-weight: bold;
+}
+
+.service-price {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.service-price .price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff8c00;
+    display: block;
+}
+
+.service-price .price-note {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.service-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: #ff8c00;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.service-btn:hover {
+    background: #e67e00;
+    transform: translateY(-2px);
+}
+
+.additional-services {
+    padding: 5rem 0;
+}
+
+.additional-services h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.additional-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.additional-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.additional-card:hover {
+    transform: translateY(-5px);
+}
+
+.additional-card i {
+    font-size: 3rem;
+    color: #ff8c00;
+    margin-bottom: 1rem;
+}
+
+.additional-card h4 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.additional-card p {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.additional-price {
+    font-weight: bold;
+    color: #ff8c00;
+    font-size: 1.1rem;
+}
+
+.process-section {
+    padding: 5rem 0;
+    background: #f8f9fa;
+}
+
+.process-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.process-step {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.process-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    width: 2px;
+    height: 2rem;
+    background: #ff8c00;
+    transform: translateX(-50%);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff8c00, #ffa500);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.step-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.benefits-section {
+    padding: 5rem 0;
+}
+
+.benefits-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.benefit-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #ff8c00, #ffa500);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.benefit-card h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.benefit-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.pricing-section {
+    padding: 5rem 0;
+    background: #f8f9fa;
+}
+
+.pricing-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.pricing-section > p {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    position: relative;
+    text-align: center;
+}
+
+.pricing-card.featured {
+    transform: scale(1.05);
+    border: 3px solid #ff8c00;
+}
+
+.pricing-card:hover:not(.featured) {
+    transform: translateY(-5px);
+}
+
+.pricing-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff8c00;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.pricing-header h3 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.pricing-price {
+    margin-bottom: 2rem;
+}
+
+.pricing-price .price {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff8c00;
+    display: block;
+}
+
+.pricing-price .period {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.pricing-features li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pricing-features li:last-child {
+    border-bottom: none;
+}
+
+.pricing-features li i {
+    width: 20px;
+    color: #ff8c00;
+}
+
+.pricing-features li.unavailable i {
+    color: #dc3545;
+}
+
+.pricing-features li.unavailable {
+    color: #999;
+}
+
+.pricing-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: #ff8c00;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.pricing-card.featured .pricing-btn {
+    background: #ffa500;
+}
+
+.pricing-btn:hover {
+    background: #e67e00;
+    transform: translateY(-2px);
+}
+
+.pricing-card.featured .pricing-btn:hover {
+    background: #e6940a;
+}
+
+.cta-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #ff8c00, #ffa500);
+    color: white;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-buttons .btn-primary {
+    background: white;
+    color: #ff8c00;
+}
+
+.cta-buttons .btn-primary:hover {
+    background: #f8f9fa;
+}
+
+.cta-buttons .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-buttons .btn-secondary:hover {
+    background: white;
+    color: #ff8c00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services-header h1 {
+        font-size: 2rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .additional-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .process-step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .process-step:not(:last-child)::after {
+        left: 50%;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-card.featured {
+        transform: none;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-header {
+        padding: 3rem 0;
+    }
+    
+    .service-card,
+    .additional-card,
+    .benefit-card,
+    .pricing-card {
+        padding: 1.5rem;
+    }
+    
+    .service-icon,
+    .benefit-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .pricing-price .price {
+        font-size: 2rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Animation for service cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-card,
+.additional-card,
+.benefit-card,
+.pricing-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.service-card:nth-child(2) { animation-delay: 0.1s; }
+.service-card:nth-child(3) { animation-delay: 0.2s; }
+.service-card:nth-child(4) { animation-delay: 0.3s; }
+
+/* Hover effects for icons */
+.service-icon,
+.benefit-icon,
+.additional-card i {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon,
+.benefit-card:hover .benefit-icon,
+.additional-card:hover i {
+    transform: scale(1.1) rotate(5deg);
+}

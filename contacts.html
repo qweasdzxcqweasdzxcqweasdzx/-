@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - UNONA REALTY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contacts.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="logo.png" alt="UNONA REALTY" class="logo">
+                <span class="brand-text">UNONA REALTY</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contacts.html" class="active">Контакты</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contacts Header -->
+    <section class="contacts-header">
+        <div class="container">
+            <h1>Свяжитесь с нами</h1>
+            <p>Мы всегда готовы помочь вам найти идеальную недвижимость</p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Телефон</h3>
+                    <p>+7 (495) 123-45-67</p>
+                    <p>+7 (495) 123-45-68</p>
+                    <a href="tel:+74951234567" class="contact-btn">Позвонить</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>info@unonarealty.ru</p>
+                    <p>sales@unonarealty.ru</p>
+                    <a href="mailto:info@unonarealty.ru" class="contact-btn">Написать</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Адрес</h3>
+                    <p>Москва, ул. Примерная, 123</p>
+                    <p>офис 456, 10 этаж</p>
+                    <a href="#map" class="contact-btn">На карте</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Режим работы</h3>
+                    <p>Пн-Пт: 9:00 - 20:00</p>
+                    <p>Сб-Вс: 10:00 - 18:00</p>
+                    <a href="catalog.html" class="contact-btn">Каталог</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form and Map -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="contact-content">
+                <!-- Contact Form -->
+                <div class="form-container">
+                    <h2>Оставьте заявку</h2>
+                    <p>Заполните форму, и мы свяжемся с вами в ближайшее время</p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="fullName">Полное имя *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Телефон *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Тема обращения</label>
+                            <select id="subject" name="subject">
+                                <option value="">Выберите тему</option>
+                                <option value="buying">Покупка недвижимости</option>
+                                <option value="selling">Продажа недвижимости</option>
+                                <option value="renting">Аренда недвижимости</option>
+                                <option value="valuation">Оценка недвижимости</option>
+                                <option value="consultation">Консультация</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Бюджет</label>
+                            <select id="budget" name="budget">
+                                <option value="">Не указан</option>
+                                <option value="0-3000000">До 3 млн ₽</option>
+                                <option value="3000000-5000000">3-5 млн ₽</option>
+                                <option value="5000000-10000000">5-10 млн ₽</option>
+                                <option value="10000000-20000000">10-20 млн ₽</option>
+                                <option value="20000000+">Более 20 млн ₽</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Расскажите подробнее о ваших требованиях..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreement" name="agreement" required>
+                                <span class="checkmark"></span>
+                                Согласен с <a href="#" target="_blank">политикой конфиденциальности</a> *
+                            </label>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                Хочу получать новости и специальные предложения
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Отправить заявку</span>
+                            <span class="btn-loading">Отправка...</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Map -->
+                <div class="map-container" id="map">
+                    <h2>Мы на карте</h2>
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p>Москва, ул. Примерная, 123</p>
+                        <p>офис 456, 10 этаж</p>
+                        <div class="map-actions">
+                            <a href="https://yandex.ru/maps/" target="_blank" class="map-btn">
+                                <i class="fab fa-yandex"></i> Яндекс.Карты
+                            </a>
+                            <a href="https://maps.google.com/" target="_blank" class="map-btn">
+                                <i class="fab fa-google"></i> Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2>Наша команда</h2>
+            <p>Познакомьтесь с профессионалами, которые помогут вам</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="team1.jpg" alt="Анна Иванова">
+                    </div>
+                    <div class="member-info">
+                        <h3>Анна Иванова</h3>
+                        <p class="position">Руководитель отдела продаж</p>
+                        <p class="experience">Опыт: 8 лет</p>
+                        <div class="member-contacts">
+                            <a href="tel:+74951234567"><i class="fas fa-phone"></i></a>
+                            <a href="mailto:anna@unonarealty.ru"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="team2.jpg" alt="Михаил Петров">
+                    </div>
+                    <div class="member-info">
+                        <h3>Михаил Петров</h3>
+                        <p class="position">Специалист по коммерческой недвижимости</p>
+                        <p class="experience">Опыт: 6 лет</p>
+                        <div class="member-contacts">
+                            <a href="tel:+74951234568"><i class="fas fa-phone"></i></a>
+                            <a href="mailto:mikhail@unonarealty.ru"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="team3.jpg" alt="Елена Сидорова">
+                    </div>
+                    <div class="member-info">
+                        <h3>Елена Сидорова</h3>
+                        <p class="position">Консультант по жилой недвижимости</p>
+                        <p class="experience">Опыт: 4 года</p>
+                        <div class="member-contacts">
+                            <a href="tel:+74951234569"><i class="fas fa-phone"></i></a>
+                            <a href="mailto:elena@unonarealty.ru"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="team4.jpg" alt="Дмитрий Козлов">
+                    </div>
+                    <div class="member-info">
+                        <h3>Дмитрий Козлов</h3>
+                        <p class="position">Юрист по недвижимости</p>
+                        <p class="experience">Опыт: 10 лет</p>
+                        <div class="member-contacts">
+                            <a href="tel:+74951234570"><i class="fas fa-phone"></i></a>
+                            <a href="mailto:dmitry@unonarealty.ru"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Часто задаваемые вопросы</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Какие документы нужны для покупки недвижимости?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Для покупки недвижимости вам понадобятся: паспорт, справка о доходах, документы о семейном положении, согласие супруга на покупку (если состоите в браке). Мы поможем подготовить все необходимые документы.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Сколько времени занимает сделка купли-продажи?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Обычно сделка занимает от 2 до 4 недель с момента подачи документов. Это включает проверку документов, оформление кредита (если необходимо) и регистрацию перехода права собственности.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Предоставляете ли вы услуги ипотечного брокера?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, мы сотрудничаем с ведущими банками и поможем подобрать наиболее выгодные условия ипотечного кредитования. Наши специалисты проконсультируют по всем вопросам и помогут оформить кредит.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Какова стоимость ваших услуг?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Стоимость услуг зависит от типа операции и стоимости объекта. Для покупателей консультации бесплатны. Комиссия составляет от 1% до 3% от стоимости сделки. Точную стоимость мы рассчитаем индивидуально.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Работаете ли вы с коммерческой недвижимостью?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, мы специализируемся как на жилой, так и на коммерческой недвижимости. Поможем найти офисы, торговые помещения, склады, производственные площади. Также предоставляем услуги по инвестиционному консультированию.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>UNONA REALTY</h3>
+                    <p>Ваш надежный партнер в мире недвижимости. Мы поможем найти дом вашей мечты.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="#">Покупка недвижимости</a></li>
+                        <li><a href="#">Продажа недвижимости</a></li>
+                        <li><a href="#">Аренда квартир</a></li>
+                        <li><a href="#">Коммерческая недвижимость</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                        <p><i class="fas fa-envelope"></i> info@unonarealty.ru</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Примерная, 123</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Режим работы</h3>
+                    <div class="working-hours">
+                        <p>Пн-Пт: 9:00 - 20:00</p>
+                        <p>Сб: 10:00 - 18:00</p>
+                        <p>Вс: 10:00 - 16:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 UNONA REALTY. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="contacts.js"></script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог недвижимости - UNONA REALTY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="catalog.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="logo.png" alt="UNONA REALTY" class="logo">
+                <span class="brand-text">UNONA REALTY</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html" class="active">Каталог</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Catalog Header -->
+    <section class="catalog-header">
+        <div class="container">
+            <h1>Каталог недвижимости</h1>
+            <p>Найдите свой идеальный дом среди наших предложений</p>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label>Тип недвижимости</label>
+                    <select id="propertyType">
+                        <option value="">Все типы</option>
+                        <option value="apartment">Квартира</option>
+                        <option value="house">Дом</option>
+                        <option value="commercial">Коммерческая</option>
+                        <option value="land">Участок</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Операция</label>
+                    <select id="operation">
+                        <option value="">Все операции</option>
+                        <option value="sale">Продажа</option>
+                        <option value="rent">Аренда</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Цена от</label>
+                    <input type="number" id="priceFrom" placeholder="От" min="0">
+                </div>
+                
+                <div class="filter-group">
+                    <label>Цена до</label>
+                    <input type="number" id="priceTo" placeholder="До" min="0">
+                </div>
+                
+                <div class="filter-group">
+                    <label>Комнаты</label>
+                    <select id="rooms">
+                        <option value="">Любое</option>
+                        <option value="1">1 комната</option>
+                        <option value="2">2 комнаты</option>
+                        <option value="3">3 комнаты</option>
+                        <option value="4">4+ комнат</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Район</label>
+                    <input type="text" id="district" placeholder="Район или адрес">
+                </div>
+                
+                <div class="filter-actions">
+                    <button class="btn-primary" onclick="applyFilters()">Применить</button>
+                    <button class="btn-secondary" onclick="resetFilters()">Сбросить</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sorting -->
+    <section class="sorting-section">
+        <div class="container">
+            <div class="sorting-controls">
+                <div class="results-count">
+                    Найдено: <span id="resultsCount">24</span> объекта
+                </div>
+                <div class="sort-controls">
+                    <label>Сортировать:</label>
+                    <select id="sortBy" onchange="sortProperties()">
+                        <option value="price-asc">По цене (возрастание)</option>
+                        <option value="price-desc">По цене (убывание)</option>
+                        <option value="date">По дате добавления</option>
+                        <option value="area">По площади</option>
+                    </select>
+                </div>
+                <div class="view-controls">
+                    <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+                    <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Grid -->
+    <section class="properties-catalog">
+        <div class="container">
+            <div class="properties-grid" id="propertiesGrid">
+                <!-- Property Card 1 -->
+                <div class="property-card" data-type="apartment" data-operation="sale" data-price="8500000" data-rooms="3">
+                    <div class="property-image">
+                        <img src="property1.jpg" alt="3-комнатная квартира">
+                        <div class="property-badge sale">Продажа</div>
+                        <button class="favorite-btn" data-property-id="1" onclick="toggleFavorite('1')">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="property-info">
+                        <h3>3-комнатная квартира в центре</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Центральный район, ул. Ленина, 45</p>
+                        <p class="price">8 500 000 ₽</p>
+                        <div class="property-details">
+                            <span><i class="fas fa-bed"></i> 3 комн.</span>
+                            <span><i class="fas fa-bath"></i> 2 с/у</span>
+                            <span><i class="fas fa-vector-square"></i> 85 м²</span>
+                            <span><i class="fas fa-building"></i> 5/12 эт.</span>
+                        </div>
+                        <div class="property-features">
+                            <span class="feature">Балкон</span>
+                            <span class="feature">Парковка</span>
+                            <span class="feature">Ремонт</span>
+                        </div>
+                        <div class="property-actions">
+                            <button class="btn-primary">Подробнее</button>
+                            <button class="btn-secondary">Связаться</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 2 -->
+                <div class="property-card" data-type="house" data-operation="sale" data-price="15000000" data-rooms="5">
+                    <div class="property-image">
+                        <img src="property2.jpg" alt="Загородный дом">
+                        <div class="property-badge sale">Продажа</div>
+                        <button class="favorite-btn" data-property-id="2" onclick="toggleFavorite('2')">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="property-info">
+                        <h3>Загородный дом с участком</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Пригород, КП "Зеленые холмы"</p>
+                        <p class="price">15 000 000 ₽</p>
+                        <div class="property-details">
+                            <span><i class="fas fa-bed"></i> 5 комн.</span>
+                            <span><i class="fas fa-bath"></i> 3 с/у</span>
+                            <span><i class="fas fa-vector-square"></i> 200 м²</span>
+                            <span><i class="fas fa-tree"></i> 10 соток</span>
+                        </div>
+                        <div class="property-features">
+                            <span class="feature">Гараж</span>
+                            <span class="feature">Сад</span>
+                            <span class="feature">Камин</span>
+                        </div>
+                        <div class="property-actions">
+                            <button class="btn-primary">Подробнее</button>
+                            <button class="btn-secondary">Связаться</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 3 -->
+                <div class="property-card" data-type="apartment" data-operation="rent" data-price="45000" data-rooms="1">
+                    <div class="property-image">
+                        <img src="property3.jpg" alt="Студия">
+                        <div class="property-badge rent">Аренда</div>
+                        <button class="favorite-btn" data-property-id="3" onclick="toggleFavorite('3')">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="property-info">
+                        <h3>Современная студия в новостройке</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Новый район, ЖК "Современный"</p>
+                        <p class="price">45 000 ₽ <span class="period">/мес</span></p>
+                        <div class="property-details">
+                            <span><i class="fas fa-bed"></i> Студия</span>
+                            <span><i class="fas fa-bath"></i> 1 с/у</span>
+                            <span><i class="fas fa-vector-square"></i> 45 м²</span>
+                            <span><i class="fas fa-building"></i> 15/20 эт.</span>
+                        </div>
+                        <div class="property-features">
+                            <span class="feature">Мебель</span>
+                            <span class="feature">Техника</span>
+                            <span class="feature">Консьерж</span>
+                        </div>
+                        <div class="property-actions">
+                            <button class="btn-primary">Подробнее</button>
+                            <button class="btn-secondary">Связаться</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 4 -->
+                <div class="property-card" data-type="apartment" data-operation="sale" data-price="6200000" data-rooms="2">
+                    <div class="property-image">
+                        <img src="property4.jpg" alt="2-комнатная квартира">
+                        <div class="property-badge sale">Продажа</div>
+                        <button class="favorite-btn" data-property-id="4" onclick="toggleFavorite('4')">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="property-info">
+                        <h3>2-комнатная квартира с видом на парк</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Парковый район, ул. Садовая, 12</p>
+                        <p class="price">6 200 000 ₽</p>
+                        <div class="property-details">
+                            <span><i class="fas fa-bed"></i> 2 комн.</span>
+                            <span><i class="fas fa-bath"></i> 1 с/у</span>
+                            <span><i class="fas fa-vector-square"></i> 65 м²</span>
+                            <span><i class="fas fa-building"></i> 3/9 эт.</span>
+                        </div>
+                        <div class="property-features">
+                            <span class="feature">Лоджия</span>
+                            <span class="feature">Кладовая</span>
+                            <span class="feature">Вид на парк</span>
+                        </div>
+                        <div class="property-actions">
+                            <button class="btn-primary">Подробнее</button>
+                            <button class="btn-secondary">Связаться</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 5 -->
+                <div class="property-card" data-type="commercial" data-operation="rent" data-price="120000" data-rooms="0">
+                    <div class="property-image">
+                        <img src="property5.jpg" alt="Офисное помещение">
+                        <div class="property-badge rent">Аренда</div>
+                        <button class="favorite-btn" data-property-id="5" onclick="toggleFavorite('5')">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="property-info">
+                        <h3>Офисное помещение в бизнес-центре</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Деловой центр, БЦ "Успех"</p>
+                        <p class="price">120 000 ₽ <span class="period">/мес</span></p>
+                        <div class="property-details">
+                            <span><i class="fas fa-briefcase"></i> Офис</span>
+                            <span><i class="fas fa-users"></i> До 15 чел.</span>
+                            <span><i class="fas fa-vector-square"></i> 95 м²</span>
+                            <span><i class="fas fa-building"></i> 7/15 эт.</span>
+                        </div>
+                        <div class="property-features">
+                            <span class="feature">Парковка</span>
+                            <span class="feature">Охрана</span>
+                            <span class="feature">Кондиционер</span>
+                        </div>
+                        <div class="property-actions">
+                            <button class="btn-primary">Подробнее</button>
+                            <button class="btn-secondary">Связаться</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 6 -->
+                <div class="property-card" data-type="apartment" data-operation="sale" data-price="4800000" data-rooms="1">
+                    <div class="property-image">
+                        <img src="property6.jpg" alt="1-комнатная квартира">
+                        <div class="property-badge sale">Продажа</div>
+                        <button class="favorite-btn" data-property-id="6" onclick="toggleFavorite('6')">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="property-info">
+                        <h3>1-комнатная квартира для молодой семьи</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Молодежный район, ул. Мира, 78</p>
+                        <p class="price">4 800 000 ₽</p>
+                        <div class="property-details">
+                            <span><i class="fas fa-bed"></i> 1 комн.</span>
+                            <span><i class="fas fa-bath"></i> 1 с/у</span>
+                            <span><i class="fas fa-vector-square"></i> 38 м²</span>
+                            <span><i class="fas fa-building"></i> 8/16 эт.</span>
+                        </div>
+                        <div class="property-features">
+                            <span class="feature">Новостройка</span>
+                            <span class="feature">Лифт</span>
+                            <span class="feature">Детская площадка</span>
+                        </div>
+                        <div class="property-actions">
+                            <button class="btn-primary">Подробнее</button>
+                            <button class="btn-secondary">Связаться</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn" disabled>←</button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn">→</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>UNONA REALTY</h3>
+                    <p>Ваш надежный партнер в мире недвижимости. Мы поможем найти дом вашей мечты.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="#">Покупка недвижимости</a></li>
+                        <li><a href="#">Продажа недвижимости</a></li>
+                        <li><a href="#">Аренда квартир</a></li>
+                        <li><a href="#">Коммерческая недвижимость</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                        <p><i class="fas fa-envelope"></i> info@unonarealty.ru</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Примерная, 123</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Режим работы</h3>
+                    <div class="working-hours">
+                        <p>Пн-Пт: 9:00 - 20:00</p>
+                        <p>Сб: 10:00 - 18:00</p>
+                        <p>Вс: 10:00 - 16:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 UNONA REALTY. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="catalog.js"></script>
+</body>
+</html>
